@@ -12,8 +12,8 @@
 2. Edge - Lines connecting the vertices
 
 ## Types of Graphs
-1. Directed Graph - No specific directions assigned to an Edge
-2. Undirected Graph - Directions assigned to an Edge
+1. Directed Graph - Directions assigned to an Edge
+2. Undirected Graph - No specific directions assigned to an Edge
 3. Weighted Graph - Specific value assigined to an Edge
 4. Unweighted Graph - No spcific value assigned to an Edge
 
