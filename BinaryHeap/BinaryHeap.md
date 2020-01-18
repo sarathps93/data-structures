@@ -28,3 +28,8 @@ It is also called as extract max
    5. The child index you swapped witll now become the parent index
    6. Keep looping and swapping until neither child is larger than the element
    7. Return the old root
+
+## Performance
+Insertion - O(log N)
+Removal - O(log N)
+search - O(N)
