@@ -9,7 +9,7 @@ It is also a type of binary tree. Binary heap is as compact as possible
 A binary heap can be represented using built in data structure like Array.
 
 To find the left node: `2n + 1`
-To find the right node: `2n + 1`
+To find the right node: `2n + 2`
 
 To find the parent of a node: `Math.floor((n-1)/2)`
 
