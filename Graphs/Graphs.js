@@ -64,6 +64,7 @@ class Graph {
     const result = [];
     const visited = {};
     const queue = [start];
+    visited[start] = true;
     while (queue.length) {
       let currentVertex = queue.shift();
       result.push(currentVertex);
@@ -89,7 +90,10 @@ q.addVertex("F");
 q.addEdge("A", "B");
 q.addEdge("A", "C");
 q.addEdge("B", "D");
+q.addEdge("B", "A");
 q.addEdge("C", "E");
 q.addEdge("D", "E");
 q.addEdge("D", "F");
 q.addEdge("E", "F");
+
+console.log(q.breadthFirst('A'))
