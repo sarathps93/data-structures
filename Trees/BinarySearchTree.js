@@ -45,7 +45,7 @@ class BinarySearchTee {
     return current;
   }
 
-  BFS() {
+  BFSIterative() {
     let data = [];
     let queue = [];
     let node = this.root;
@@ -60,6 +60,19 @@ class BinarySearchTee {
         queue.push(node.right);
       }
     }
+    return data;
+  }
+
+  BFSRecursive() {
+    const data = [];
+    const traverse = (node, queue = [this.root]) => {
+        const currNode = queue.shift();
+        if(!currNode && !queue.length) return;
+        data.push(currNode.val);
+        traverse(currNode.left, queue)
+        traverse(currNode.right, queue)
+    }
+    traverse(this.root);
     return data;
   }
 
@@ -96,9 +109,11 @@ class BinarySearchTee {
     traverse(this.root);
     return data;
   }
+
   DFSPostOrderIterative() {
 
   }
+
   DFSInOrderRecursive() {
     let data = [];
     function traverse(node) {
@@ -109,6 +124,7 @@ class BinarySearchTee {
     traverse(this.root);
     return data;
   }
+
   DFSInOrderIterative() {
     const output = [];
     const stack = [];
@@ -143,5 +159,5 @@ myBST.insert(6);
 myBST.insert(11);
 myBST.insert(17);
 
-console.log(myBST.DFSPreOrderIterative())
+console.log(myBST.BFSRecursive())
 

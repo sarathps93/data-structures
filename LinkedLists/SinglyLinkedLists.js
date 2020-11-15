@@ -116,6 +116,27 @@ class SinglyLinkedList {
     }
     return this;
   }
+
+  static reverseRecursive(head) {
+    if(!head || !head.next) return head;
+    const p = this.reverseRecursive(head.next);
+    head.next.next = head;
+    head.next = null;
+    return p
+  }
+
+  static reverseIterative(head) {
+    let previous = null;
+    let current = head;
+    while(current) {
+      const nextNode = current.next;
+      current.next = previous;
+      previous = current;
+      current = nextNode;
+    }
+
+    return previous;
+  }
 }
 
 var list = new SinglyLinkedList();
