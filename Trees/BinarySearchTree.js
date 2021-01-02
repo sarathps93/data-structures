@@ -145,6 +145,33 @@ class BinarySearchTee {
     }
     return output;
   }
+
+  invertTreeRecursive() {
+    const invert = (node) => {
+      if(!node) return null;
+      const left = invert(node.left);
+      const right = invert(node.right);
+      node.left = right;
+      node.right = left;
+      return node;
+    }
+    invert(this.root);
+  }
+
+  invertTreeIterative(root) {
+    if(!root) return null;
+    const queue = [root];
+    
+    while(queue.length) {
+        const node = queue.shift();
+        const temp = node.left;
+        node.left = node.right;
+        node.right = temp;
+        if(node.left) queue.push(node.left)
+        if(node.right) queue.push(node.right)
+    }
+    return root;
+  }
 }
 
 class Node {
@@ -164,5 +191,5 @@ myBST.insert(6);
 myBST.insert(11);
 myBST.insert(17);
 
-console.log(myBST.DFSPostOrderIterative())
+console.log(myBST.invertTreeRecursive())
 
