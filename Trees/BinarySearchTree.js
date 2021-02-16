@@ -172,6 +172,20 @@ class BinarySearchTee {
     }
     return root;
   }
+
+  maxDiamterOfTree(root) {
+    let ans = 0;
+    
+    const recursion = (node) => {
+        if(!node) return 0;
+        const L = recursion(node.left);
+        const R = recursion(node.right);
+        ans = Math.max(ans, L + R);
+        return Math.max(L, R) + 1;
+    }
+    recursion(root);
+    return ans;
+  }
 }
 
 class Node {

@@ -47,3 +47,7 @@ E --> Number of Edges
 | Query         | O(V + E)        | O(1)              |
 | Storage       | O(V + E)        | O(V^2)            |
 
+
+## Other points
+* A directed graph can have atmost `n(n - 1)` edges
+* An undirected graph can have atmost `n(n - 1) / 2` edges

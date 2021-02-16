@@ -22,6 +22,7 @@ class PriorityQueue {
   dequeue() {
     const min = this.values[0];
     const end = this.values.pop();
+    if(!this.values.length) return min;
     this.values[0] = end;
     // Sink Down
     this.sinkDown();
