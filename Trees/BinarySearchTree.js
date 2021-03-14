@@ -141,7 +141,7 @@ class BinarySearchTee {
       }
       const curr = stack.pop();
       output.push(curr.value);
-      node = curr.right;
+      if(curr.right) node = curr.right;
     }
     return output;
   }
@@ -201,9 +201,8 @@ myBST.insert(10);
 myBST.insert(7);
 myBST.insert(15);
 myBST.insert(2);
-myBST.insert(6);
+myBST.insert(8);
 myBST.insert(11);
 myBST.insert(17);
 
-console.log(myBST.invertTreeRecursive())
-
+console.log(myBST.DFSInOrderIterative())

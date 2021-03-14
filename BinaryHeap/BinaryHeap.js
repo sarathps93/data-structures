@@ -9,7 +9,7 @@ class MaxBinaryHeap {
   bubbleUp() {
     let idx = this.values.length - 1;
     const element = this.values[idx];
-    while (true) {
+    while (idx > 0) {
       let parentIdx = Math.floor((idx - 1) / 2);
       let parent = this.values[parentIdx];
       if (element <= parent) break;
@@ -21,6 +21,7 @@ class MaxBinaryHeap {
   extractMax() {
     const max = this.values[0];
     const end = this.values.pop();
+    if(!this.values.length) return max;
     this.values[0] = end;
     // Sink Down
     this.sinkDown();
